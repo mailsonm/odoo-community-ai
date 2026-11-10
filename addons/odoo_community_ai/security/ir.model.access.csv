@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_llm_config_base_user,llm.config.base.user,model_llm_config,base.group_user,1,0,0,0
+access_llm_config_ai_user,llm.config.ai.user,model_llm_config,group_ai_user,1,0,0,0
+access_llm_config_ai_admin,llm.config.ai.admin,model_llm_config,group_ai_admin,1,1,1,1
+access_llm_conversation_base_user,llm.conversation.base.user,model_llm_conversation,base.group_user,1,1,1,1
+access_llm_conversation_ai_user,llm.conversation.ai.user,model_llm_conversation,group_ai_user,1,1,1,1
+access_llm_conversation_ai_admin,llm.conversation.ai.admin,model_llm_conversation,group_ai_admin,1,1,1,1
+access_llm_message_base_user,llm.message.base.user,model_llm_message,base.group_user,1,1,1,1
+access_llm_message_ai_user,llm.message.ai.user,model_llm_message,group_ai_user,1,1,1,1
+access_llm_message_ai_admin,llm.message.ai.admin,model_llm_message,group_ai_admin,1,1,1,1
+access_ai_tool_base_user,ai.tool.base.user,model_ai_tool,base.group_user,1,0,0,0
+access_ai_tool_ai_user,ai.tool.ai.user,model_ai_tool,group_ai_user,1,0,0,0
+access_ai_tool_ai_admin,ai.tool.ai.admin,model_ai_tool,group_ai_admin,1,1,1,1
+access_ai_form_copilot_wizard_base_user,ai.form.copilot.wizard.base.user,model_ai_form_copilot_wizard,base.group_user,1,1,1,1
+access_ai_form_copilot_wizard_ai_user,ai.form.copilot.wizard.ai.user,model_ai_form_copilot_wizard,group_ai_user,1,1,1,1
+access_ai_form_copilot_wizard_ai_admin,ai.form.copilot.wizard.ai.admin,model_ai_form_copilot_wizard,group_ai_admin,1,1,1,1
