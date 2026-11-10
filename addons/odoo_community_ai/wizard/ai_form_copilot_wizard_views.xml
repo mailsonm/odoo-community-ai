@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_ai_form_copilot_wizard" model="ir.ui.view">
+        <field name="name">ai.form.copilot.wizard.form</field>
+        <field name="model">ai.form.copilot.wizard</field>
+        <field name="arch" type="xml">
+            <form string="AI Form Copilot (OCR &amp; Vision)">
+                <field name="state" invisible="1"/>
+                <field name="extracted_json" invisible="1"/>
+
+                <div invisible="state != 'draft'">
+                    <div class="alert alert-info py-2 px-3 mb-3" role="status" style="font-size: 13px; border-left: 4px solid #714B67;">
+                        <strong>Smart Form Drafting (OCR &amp; Computer Vision):</strong><br/>
+                        Upload a photo or PDF (business card, invoice header, product label, or resume). The AI Copilot will extract the fields and open the official Odoo form pre-filled in draft mode.
+                    </div>
+                    <group>
+                        <group>
+                            <field name="target_model" widget="radio"/>
+                        </group>
+                        <group>
+                            <field name="document_image" filename="image_filename" widget="image" options="{'size': [300, 300]}"/>
+                            <field name="image_filename" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="notes_hint" placeholder="Example: Extract the billing address, prioritize SKU reference..."/>
+                    </group>
+                </div>
+
+                <div invisible="state != 'extracted'">
+                    <field name="extracted_summary" widget="html" readonly="1" nolabel="1"/>
+                </div>
+
+                <footer>
+                    <button name="action_extract_data" string="Extract with AI" type="object" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_apply_to_form" string="Open Pre-filled Form" type="object" class="btn-success" invisible="state != 'extracted'"/>
+                    <button name="action_reset" string="Upload Another Document" type="object" class="btn-secondary" invisible="state != 'extracted'"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ai_form_copilot_wizard" model="ir.actions.act_window">
+        <field name="name">AI Form Copilot</field>
+        <field name="res_model">ai.form.copilot.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
