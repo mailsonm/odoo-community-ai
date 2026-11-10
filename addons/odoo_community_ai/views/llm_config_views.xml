@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_llm_config_list" model="ir.ui.view">
+        <field name="name">llm.config.list</field>
+        <field name="model">llm.config</field>
+        <field name="arch" type="xml">
+            <list string="AI Provider Configurations">
+                <field name="name"/>
+                <field name="provider"/>
+                <field name="model_name"/>
+                <field name="is_default" widget="boolean_toggle"/>
+                <field name="is_active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_llm_config_form" model="ir.ui.view">
+        <field name="name">llm.config.form</field>
+        <field name="model">llm.config</field>
+        <field name="arch" type="xml">
+            <form string="AI Provider Configuration">
+                <header>
+                    <button name="action_set_as_default" string="Set as Default" type="object" class="btn-primary" invisible="is_default"/>
+                    <button name="action_test_connection" string="Test Connection" type="object" class="btn-secondary"/>
+                    <button name="action_fetch_models" string="Discover API Models" type="object" class="btn-info"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Configuration Name"/>
+                        <h1>
+                            <field name="name" placeholder="Example: Google Gemini 3.5 Flash, Ollama Local..."/>
+                        </h1>
+                    </div>
+
+                    <field name="recommended_model_note" widget="html" readonly="1" nolabel="1"/>
+
+                    <group>
+                        <group string="Provider &amp; Endpoint">
+                            <field name="provider"/>
+                            <field name="api_base_url" placeholder="https://generativelanguage.googleapis.com or http://host.docker.internal:11434"/>
+                            <field name="api_key" password="True"/>
+                            <field name="model_name" placeholder="gemini-3.5-flash, gpt-4o-mini, llama3.2..."/>
+                        </group>
+                        <group string="Generation Parameters">
+                            <field name="temperature"/>
+                            <field name="max_tokens"/>
+                            <field name="is_default"/>
+                            <field name="is_active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="System Prompt" name="system_prompt">
+                            <field name="system_prompt" placeholder="Custom system instructions for the AI Assistant..."/>
+                        </page>
+                        <page string="Discovered Models" name="detected_models">
+                            <field name="compatible_models_json" readonly="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_llm_config" model="ir.actions.act_window">
+        <field name="name">AI Providers</field>
+        <field name="res_model">llm.config</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
