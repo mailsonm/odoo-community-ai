@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form_inherit_odoo_community_ai" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.odoo.community.ai</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="AI Assistant" name="odoo_community_ai_page">
+                    <group string="Personal AI API Key">
+                        <field name="ai_use_personal_key"/>
+                        <field name="ai_personal_api_key" password="True" invisible="not ai_use_personal_key"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
