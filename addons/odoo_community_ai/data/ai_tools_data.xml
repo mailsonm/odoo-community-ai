@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ai_tool_search_partners" model="ai.tool">
+            <field name="name">Search Contacts &amp; Partners</field>
+            <field name="code">search_partners</field>
+            <field name="category">contacts</field>
+            <field name="model_name">ai.tool</field>
+            <field name="method_name">action_tool_search_partners</field>
+            <field name="description">Searches contacts, customers, and suppliers by name, email, or VAT/Tax ID.</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ai_tool_check_product_stock" model="ai.tool">
+            <field name="name">Check Product Stock &amp; Price</field>
+            <field name="code">check_product_stock</field>
+            <field name="category">inventory</field>
+            <field name="model_name">ai.tool</field>
+            <field name="method_name">action_tool_check_product_stock</field>
+            <field name="description">Queries products, internal codes, list prices, and real-time available stock.</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ai_tool_sales_summary" model="ai.tool">
+            <field name="name">Daily Sales Summary</field>
+            <field name="code">sales_summary</field>
+            <field name="category">sales</field>
+            <field name="model_name">ai.tool</field>
+            <field name="method_name">action_tool_sales_summary</field>
+            <field name="description">Returns consolidated sales order count and revenue for a target date.</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ai_tool_financial_summary" model="ai.tool">
+            <field name="name">Accounts Receivable &amp; Payable Summary</field>
+            <field name="code">financial_summary</field>
+            <field name="category">accounting</field>
+            <field name="model_name">ai.tool</field>
+            <field name="method_name">action_tool_financial_summary</field>
+            <field name="description">Queries open customer invoices (receivables) or vendor bills (payables).</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>
