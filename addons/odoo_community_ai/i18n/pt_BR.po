@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoo_community_ai
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: odoo_community_ai
+#: model:ir.ui.menu,name:odoo_community_ai.menu_odoo_community_ai_root
+msgid "AI Assistant"
+msgstr "Assistente de IA"
+
+#. module: odoo_community_ai
+#: model:ir.ui.menu,name:odoo_community_ai.menu_odoo_community_ai_form_copilot
+#: model:ir.actions.act_window,name:odoo_community_ai.action_ai_form_copilot_wizard
+msgid "AI Form Copilot"
+msgstr "Copilot de Formulários"
+
+#. module: odoo_community_ai
+#: model:ir.ui.menu,name:odoo_community_ai.menu_odoo_community_ai_conversations
+#: model:ir.actions.act_window,name:odoo_community_ai.action_llm_conversation
+msgid "Conversation History"
+msgstr "Histórico de Conversas"
+
+#. module: odoo_community_ai
+#: model:ir.ui.menu,name:odoo_community_ai.menu_odoo_community_ai_configs
+#: model:ir.actions.act_window,name:odoo_community_ai.action_llm_config
+msgid "AI Providers"
+msgstr "Provedores de IA"
+
+#. module: odoo_community_ai
+#: model:ir.ui.menu,name:odoo_community_ai.menu_odoo_community_ai_tools
+#: model:ir.actions.act_window,name:odoo_community_ai.action_ai_tool
+msgid "AI Tools (OCA)"
+msgstr "Ferramentas de IA (OCA)"
+
+#. module: odoo_community_ai
+#: code:addons/odoo_community_ai/models/llm_conversation.py:0
+msgid "The conversation title cannot be empty."
+msgstr "O título da conversa não pode estar vazio."
+
+#. module: odoo_community_ai
+#: code:addons/odoo_community_ai/models/llm_conversation.py:0
+msgid "You can only rename your own conversations."
+msgstr "Você só pode renomear suas próprias conversas."
